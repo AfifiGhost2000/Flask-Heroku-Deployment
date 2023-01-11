@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="static/css/style.css">
+<title> Customer Prediction Model </title>
+</head>
+<body>
+  <body>
+    <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h3>Predicted Customer's Income</h3>
+            <p>Please enter the customer's Info</p>
+          </div>
+        </div>
+        <form action="{{ url_for('main') }}" method="POST" class="login-form">
+          <input type="number" name="customer_id" placeholder="customer Id" required/>
+          <input type="text" name="city" placeholder="city" required/>
+          <input type="text" name="gender" placeholder="gender" required/>
+          <input type="number" name="age" placeholder="age" required/>
+          <button>Predict</button>       
+        <br>
+        <div class="result",align="center">           
+            <!-- Our 'result' is false until a prediction has been made -->
+            {% if result %}
+                <br>
+                <!-- Print prediction -->
+                <br> 
+                <p style="font-size:50px">{{ result }}</p>
+            
+            {% endif %}
+        </div>
+    </form>
+      </div>
+    </div>
+</body>
+</body>
+</html>
